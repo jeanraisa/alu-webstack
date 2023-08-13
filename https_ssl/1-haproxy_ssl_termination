@@ -38,8 +38,10 @@ frontend http-in
         mode http
         default_backend web-backend
 
-frontend https-frontend
-        bind *:443 ssl crt /etc/letsencrypt/live/www.raisa.tech/fullchain.pem
+
+frontend https_frontend
+        bind *:80
+	bind *:443 ssl crt /etc/letsencrypt/live/www.raisa.tech/fullchain.pem
         mode http
         default_backend web-backend
 backend web-backend
